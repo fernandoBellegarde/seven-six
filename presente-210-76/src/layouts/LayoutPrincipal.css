@@ -1,0 +1,26 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5efeb;
+}
+
+.layout-header {
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.layout-content {
+  flex-grow: 1;
+  padding: 2rem 1rem;
+}
+
+.layout-footer {
+  background-color: #ffe1e6;
+  text-align: center;
+  padding: 1.5rem;
+  color: #ff83b5;
+  font-weight: bold;
+  margin-top: auto;
+}

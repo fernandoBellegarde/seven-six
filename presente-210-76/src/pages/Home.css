@@ -1,0 +1,93 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Menos padding em telas pequenas para não espremer o conteúdo */
+  padding: 1.5rem 1rem;
+}
+
+.home-card {
+  background: white;
+  padding: 2rem; /* Padding inicial para mobile */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 90%; /* Ocupa 90% da tela no celular */
+  max-width: 600px;
+}
+
+.home-card h1 {
+  color: #ff83b5;
+  font-size: 2rem; /* Tamanho de fonte para mobile */
+  margin-bottom: 1rem;
+}
+
+.home-card p {
+  color: #2f4156;
+  font-size: 1.1rem; /* Tamanho de fonte para mobile */
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.home-actions {
+  display: flex;
+  /* Os botões ficam em coluna no celular */
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.home-button {
+  background-color: #ffe1e6;
+  color: #2f4156;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  /* Sombra sutil usando uma variação da cor Navy */
+  box-shadow: 0 4px 15px rgba(47, 79, 79, 0.2);
+  /* Ocupa toda a largura do card no celular */
+  width: 100%;
+}
+
+.home-button:hover {
+  background-color: #f7c9d4;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(47, 79, 79, 0.3);
+}
+
+/* ========================================= */
+/* ESTILOS PARA TELAS MAIORES (TABLET/DESKTOP) */
+/* ========================================= */
+@media (min-width: 768px) {
+  .home-container {
+    padding: 2rem; /* Restaura o padding maior */
+  }
+
+  .home-card {
+    padding: 3rem; /* Restaura o padding maior do card */
+  }
+
+  .home-card h1 {
+    font-size: 2.5rem; /* Aumenta a fonte do título */
+  }
+
+  .home-card p {
+    font-size: 1.2rem; /* Aumenta a fonte do parágrafo */
+  }
+
+  .home-actions {
+    /* Botões ficam lado a lado em telas maiores */
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .home-button {
+    /* Botão volta a ter largura automática */
+    width: auto;
+    padding: 1rem 2rem;
+  }
+}
+

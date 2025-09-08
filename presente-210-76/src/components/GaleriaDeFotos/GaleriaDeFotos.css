@@ -1,0 +1,79 @@
+.galeria-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.galeria-container h2 {
+  font-size: 2.2rem;
+  color: #2f4156;
+  margin-bottom: 0.5rem;
+}
+
+.galeria-subtitulo {
+  color: #777;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  padding: 0 1rem;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.foto-card {
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Importante para a legenda não vazar */
+  position: relative;
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+.foto-card img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+
+.foto-legenda {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  padding: 1rem;
+  font-size: 1rem;
+  /* A legenda fica escondida por padrão em todas as telas */
+  transform: translateY(100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+/* A ÚNICA REGRA que mostra a legenda é esta, controlada pelo clique */
+.foto-legenda.visivel {
+  transform: translateY(0);
+}
+
+.foto-legenda p {
+  margin: 0;
+}
+
+/* Media queries para o layout da grade continuam iguais */
+@media (min-width: 768px) {
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .galeria-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
