@@ -8,7 +8,7 @@ import Ghibli from '../../assets/imgs/ghibli.jpg';
 import inicio from '../../assets/imgs/Inicio.jpg';
 import linda from '../../assets/imgs/linda.jpg';
 import ptcoitada from '../../assets/imgs/ptcoitada.jpg';
-import termino from '../../assets/imgs/termino.jpg';
+import termino from '../../assets/imgs/Termino.jpg';
 
 const nossasFotos = [
     { imagem: Afovaga, legenda: 'Eu me AFOGAVA, nas suas pernas' },

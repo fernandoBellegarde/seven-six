@@ -14,23 +14,23 @@ function Menu() {
     <nav className="menu-nav">
       <div className="menu-container">
         <div className="menu-logo">
+          {/* Adicionado NavLink aqui para consistência e onClick */}
           <NavLink to="/" onClick={fecharMenu}>Nosso Cantinho 💕</NavLink>
         </div>
 
-        {/* O menu hambúrguer só aparece em telas pequenas (controlado via CSS) */}
-        <button 
-          className="menu-hamburger" 
+        {/* Botão Hambúrguer que aparece em telas pequenas (controlado via CSS) */}
+        <button
+          className={`menu-hamburger ${menuAberto ? 'aberto' : ''}`}
           onClick={() => setMenuAberto(!menuAberto)}
-          aria-label="Abrir menu"
+          aria-label="Abrir ou fechar menu"
         >
-          {/* As 3 linhas do ícone */}
           <span></span>
           <span></span>
           <span></span>
         </button>
 
         {/* Adicionamos a classe 'aberto' quando o estado for true */}
-        <div className={menuAberto ? "menu-links aberto" : "menu-links"}>
+        <div className={`menu-links ${menuAberto ? 'aberto' : ''}`}>
           <NavLink to="/" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'} onClick={fecharMenu}>
             Início
           </NavLink>

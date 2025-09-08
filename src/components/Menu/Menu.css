@@ -1,6 +1,13 @@
+/* --- ESTILOS BASE (MOBILE-FIRST) --- */
+
 .menu-nav {
-  background-color: #ffe1e6;
-  padding: 0 2rem;
+  /* Usando o Rosa Pálido da sua paleta */
+  background-color: #FFE1E6;
+  padding: 0 1rem; /* Menos padding em telas pequenas */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .menu-container {
@@ -13,42 +20,136 @@
 }
 
 .menu-logo a {
-  color: #ff83b5;
+  /* Usando o Azaleia da sua paleta */
+  color: #ff85c1;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.3rem; /* Ligeiramente menor no mobile */
   font-weight: bold;
 }
 
+/* --- ESTILOS DO MENU HAMBÚRGUER --- */
+.menu-hamburger {
+  display: flex; /* Visível por padrão no mobile */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.menu-hamburger span {
+  width: 2rem;
+  height: 0.25rem;
+  /* Usando o Azul Marinho da paleta */
+  background: #2F4F4F;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+/* Animação do hambúrguer para um 'X' */
+.menu-hamburger.aberto span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.menu-hamburger.aberto span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+.menu-hamburger.aberto span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+
+/* --- ESTILOS DOS LINKS (MOBILE) --- */
 .menu-links {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
+  /* Usando o Bege da paleta para o fundo do menu */
+  background: #F5EFEB;
+  height: 100vh;
+  text-align: left;
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%); /* Escondido fora da tela */
+  transition: transform 0.3s ease-in-out;
+  width: 60%;
+  max-width: 250px;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+}
+
+.menu-links.aberto {
+  transform: translateX(0); /* Visível na tela */
 }
 
 .menu-link {
-  color: #2f4156;
+  /* Usando o Azul Marinho para o texto */
+  color: #2F4F4F;
   text-decoration: none;
-  font-size: 1.1rem;
-  padding: 0.5rem 0;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.menu-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #2f4156;
-  transition: width 0.3s ease;
-}
-
-.menu-link:hover::after,
-.menu-link.active::after {
-  width: 100%;
-}
-
-.menu-link.active {
+  font-size: 1.5rem;
   font-weight: bold;
+  position: relative;
 }
+
+.menu-link::after { display: none; } /* Remove a linha de baixo no mobile */
+.menu-link.active {
+  /* Usando o Azaleia para destacar o link ativo */
+  color: #ff85c1;
+}
+
+
+/* --- ESTILOS PARA TELAS MAIORES (TABLET E DESKTOP) --- */
+@media (min-width: 768px) {
+  .menu-hamburger {
+    display: none; /* Esconde o hambúrguer */
+  }
+
+  .menu-links {
+    position: static;
+    transform: translateX(0);
+    height: auto;
+    width: auto;
+    flex-direction: row;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .menu-link {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    font-weight: normal; /* Volta ao peso normal */
+  }
+
+  .menu-link::after {
+    display: block; /* Mostra a linha de baixo novamente */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #2F4F4F;
+    transition: width 0.3s ease;
+  }
+
+  .menu-link:hover::after,
+  .menu-link.active::after {
+    width: 100%;
+  }
+
+  .menu-link.active {
+    color: #2F4F4F; /* Garante que a cor do link ativo seja a padrão */
+    font-weight: bold;
+  }
+}
+
