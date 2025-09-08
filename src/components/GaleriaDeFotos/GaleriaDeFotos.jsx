@@ -5,7 +5,7 @@ import Amor from '../../assets/imgs/Amor.jpg';
 import Casal from '../../assets/imgs/Casal.jpg';
 import Esmaga from '../../assets/imgs/Esmaga.jpg';
 import GATA from '../../assets/imgs/GATA.jpg';
-import Ghibli from '../../assets/imgs/Ghibli.jpg';
+import Ghibli from '../../assets/imgs/ghibli.jpg';
 import inicio from '../../assets/imgs/inicio.jpg';
 import linda from '../../assets/imgs/linda.jpg';
 import ptcoitada from '../../assets/imgs/ptcoitada.jpg';
