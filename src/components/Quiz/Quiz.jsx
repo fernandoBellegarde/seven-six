@@ -21,6 +21,11 @@ const perguntasDoQuiz = [
     pergunta: 'Qual foi o primeiro lugar que comemos juntos"?',
     opcoes: ['Baccio', `Applebee's`, 'Madero', 'Milky Moo'],
     respostaCorreta: `Applebee's`,
+  },
+  {
+    pergunta: 'Qual é a parte do seu corpo que eu mais amo? 😍',
+    opcoes: ['Seu sorriso', 'Seus olhos', 'Seu cabelo', 'Seu peito'],
+    respostaCorreta: 'Seu cabelo',
   }
 ];
 
@@ -40,7 +45,6 @@ function Quiz() {
       setFeedback('Quase! A resposta era outra... 😉');
     }
 
-    // Espera um pouco para a pessoa ver o feedback antes de ir para a próxima pergunta
     setTimeout(() => {
       const proximaPergunta = perguntaAtual + 1;
       if (proximaPergunta < perguntasDoQuiz.length) {

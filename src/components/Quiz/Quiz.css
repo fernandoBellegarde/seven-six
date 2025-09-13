@@ -1,6 +1,24 @@
+Este código CSS cria uma base excelente para o visual do seu quiz. Ele já tem um bom layout responsivo e define os estilos para os estados de "correto" e "incorreto".
+
+Analisando o código, podemos fazer três melhorias principais para deixá-lo perfeito, com base no que já conversámos:
+
+    Corrigir o efeito :hover no celular, que fazia o botão ficar "preso" na cor de destaque após o toque.
+
+    Otimizar o "Mobile-First", ajustando tamanhos de texto e espaçamentos para ecrãs bem pequenos e aumentando-os para ecrãs maiores.
+
+    Unificar a paleta de cores, garantindo que todos os textos e títulos usem as cores elegantes que escolheu (Navy, Azalea, etc.).
+
+CSS do Quiz (Versão Melhorada)
+
+Aqui está a versão atualizada do seu components/Quiz/Quiz.css que aplica todas estas melhorias. Pode substituir o conteúdo do seu ficheiro por este código.
+CSS
+
+/* src/components/Quiz/Quiz.css */
+
 .quiz-container {
   background-color: white;
-  padding: 30px;
+  /* Padding inicial menor para mobile */
+  padding: 1.5rem;
   border-radius: 15px;
   width: 90%;
   max-width: 700px;
@@ -20,8 +38,10 @@
 }
 
 .pergunta-texto {
-  font-size: 1.5rem;
-  color: #2f4156;
+  /* Tamanho de fonte base para mobile */
+  font-size: 1.3rem;
+  /* Cor principal da paleta (Navy) */
+  color: #2F4F4F;
   line-height: 1.4;
 }
 
@@ -32,9 +52,10 @@
 }
 
 .resposta-button {
-  background-color: #ffe1e6;
-  color: #2f4156;
-  border: 2px solid #f7c9d4;
+  /* Cores da sua paleta (Pale Pink e Azalea) */
+  background-color: #FFE1E6;
+  color: #2F4F4F;
+  border: 2px solid #F7C9D4;
   padding: 15px;
   border-radius: 8px;
   font-size: 1.1rem;
@@ -45,25 +66,35 @@
   text-align: left;
 }
 
-.resposta-button:hover:not(:disabled) {
-  background-color: #ff85c1;
-  color: white;
-}
-
 .resposta-button:disabled {
   cursor: not-allowed;
+  /* Efeito visual para mostrar que está desativado */
+  opacity: 0.6;
 }
 
+/* --- MELHORIA 1: CORREÇÃO DO :HOVER --- */
+/* Este efeito de hover só será aplicado em dispositivos com mouse, */
+/* resolvendo o problema do "botão preso" no celular. */
+@media (hover: hover) and (pointer: fine) {
+  .resposta-button:hover:not(:disabled) {
+    /* Cor Azalea no hover */
+    background-color: #F7C9D4;
+  }
+}
+
+/* Estilos de feedback (certo/errado) mantidos para clareza */
 .resposta-button.correct {
   background-color: #a5d6a7;
   color: white;
   border-color: #66bb6a;
+  opacity: 1; /* Garante opacidade total */
 }
 
 .resposta-button.incorrect {
   background-color: #ef9a9a;
   color: white;
   border-color: #ef5350;
+  opacity: 1; /* Garante opacidade total */
 }
 
 .feedback-texto {
@@ -72,7 +103,8 @@
   text-align: center;
   font-weight: bold;
   font-size: 1.1rem;
-  color: #cf6c94;
+  /* Cor principal da paleta (Navy) */
+  color: #2F4F4F;
 }
 
 .resultado-final {
@@ -80,21 +112,42 @@
 }
 
 .resultado-final h2 {
-  font-size: 2.5rem;
-  color: rgb(255, 90, 172);
+  /* Tamanho de fonte base para mobile */
+  font-size: 2.2rem;
+  /* Cor principal da paleta (Navy) */
+  color: #2F4F4F;
 }
 
 .resultado-final h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #555;
   margin-bottom: 2rem;
   font-weight: normal;
 }
 
 .mensagem-final {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 1.7;
-  color: #ff83b5;
+  /* Cor principal da paleta (Navy) */
+  color: #2F4F4F;
   font-weight: bold;
 }
 
+
+/* --- MELHORIA 2: OTIMIZAÇÃO PARA TELAS MAIORES --- */
+@media (min-width: 768px) {
+  .quiz-container {
+    /* Aumenta o padding em telas maiores */
+    padding: 30px;
+  }
+
+  .pergunta-texto {
+    /* Aumenta a fonte da pergunta */
+    font-size: 1.5rem;
+  }
+
+  .resultado-final h2 {
+    /* Aumenta a fonte do título final */
+    font-size: 2.5rem;
+  }
+}
