@@ -72,6 +72,43 @@ CSS
   opacity: 0.6;
 }
 
+.resultado-actions {
+  display: flex;
+  flex-direction: column; /* Botões um em cima do outro no celular */
+  gap: 1rem;
+  margin-top: 2.5rem; /* Aumenta o espaço acima dos botões */
+  align-items: center;
+  width: 100%;
+}
+
+/* Estilo base para ambos os botões */
+.resultado-button {
+  text-decoration: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600; /* Um pouco mais forte */
+  transition: all 0.3s ease;
+  border: 2px solid transparent; /* Borda base transparente */
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+  max-width: 280px;
+}
+
+/* Estilo do botão principal (Voltar para Home) - o Link vira um <a> */
+.resultado-actions a.resultado-button {
+  background-color: #ffb8c9ff; /* Azul Marinho */
+  color: white;
+}
+
+/* Estilo do botão secundário (Refazer Quiz) */
+.resultado-actions button.resultado-button {
+  background-color: #ffb8c9ff;
+  color: white;
+}
+
 /* --- MELHORIA 1: CORREÇÃO DO :HOVER --- */
 /* Este efeito de hover só será aplicado em dispositivos com mouse, */
 /* resolvendo o problema do "botão preso" no celular. */
@@ -79,6 +116,19 @@ CSS
   .resposta-button:hover:not(:disabled) {
     /* Cor Azalea no hover */
     background-color: #F7C9D4;
+  }
+  .resultado-actions a.resultado-button:hover {
+    background-color: #4a6a6a; /* Um tom mais claro do Azul Marinho */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Hover para o botão secundário */
+  .resultado-actions button.resultado-button:hover {
+    background-color: #2F4F4F; /* Preenche com Azul Marinho */
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -149,5 +199,9 @@ CSS
   .resultado-final h2 {
     /* Aumenta a fonte do título final */
     font-size: 2.5rem;
+  }
+  .resultado-actions {
+    flex-direction: row;
+    justify-content: center;
   }
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Quiz.css';
 
 const perguntasDoQuiz = [
@@ -26,6 +27,26 @@ const perguntasDoQuiz = [
     pergunta: 'Qual é a parte do seu corpo que eu mais amo? 😍',
     opcoes: ['Seu sorriso', 'Seus olhos', 'Seu cabelo', 'Seu peito'],
     respostaCorreta: 'Seu cabelo',
+  },
+  {
+    pergunta: 'Qual é a minha comida favorita?',
+    opcoes: ['Pizza', 'Sushi', 'Churrasco', 'Salada'],
+    respostaCorreta: 'Sushi',
+  },
+  {
+    pergunta: 'Onde foi nosso primeiro selinho?',
+    opcoes: ['No cinema do parque da cidade', 'Na praça da sua casa', 'No parque do povo', 'No shopping Morumbi'],
+    respostaCorreta: 'Na praça da sua casa',
+  },
+  {
+    pergunta: 'Quantos selinhos você acha que já trocamos?',
+    opcoes: ['20 MILHÕES', '50 MILHÕES', '76 MILHÕES', 'INFINITOS MILHÕES'],
+    respostaCorreta: 'INFINITOS MILHÕES',
+  },
+  {
+    pergunta: 'Quantos selinhos você TEM QUE ESTAR DISPOSTA a me dar na vida?',
+    opcoes: ['20 MILHÕES', '50 MILHÕES', '76 MILHÕES', 'INFINITOS MILHÕES'],
+    respostaCorreta: 'INFINITOS MILHÕES',
   }
 ];
 
@@ -39,10 +60,10 @@ function Quiz() {
   const handleRespostaClick = (opcao) => {
     setOpcaoSelecionada(opcao);
     if (opcao === perguntasDoQuiz[perguntaAtual].respostaCorreta) {
-      setFeedback('Acertou! 🥰');
+      setFeedback('Acertou amor ate que vc me conhece um pouquinho! 🥰');
       setPontuacao(pontuacao + 1);
     } else {
-      setFeedback('Quase! A resposta era outra... 😉');
+      setFeedback('A resposta era outra.... vc me odeia por acaso? 😢');
     }
 
     setTimeout(() => {
@@ -54,8 +75,16 @@ function Quiz() {
       }
       setOpcaoSelecionada(null);
       setFeedback('');
-    }, 1500); // 1.5 segundos de espera
+    }, 1000); // 1 segundo de espera
   };
+
+  const handleRefazerQuiz = () => {
+      setPerguntaAtual(0);
+      setPontuacao(0);
+      setMostrarResultado(false);
+      setOpcaoSelecionada(null);
+      setFeedback('');
+    }
 
   return (
     <div className="quiz-container">
@@ -64,8 +93,17 @@ function Quiz() {
           <h2>Quiz Finalizado!</h2>
           <h3>Você acertou {pontuacao} de {perguntasDoQuiz.length} perguntas!</h3>
           <p className="mensagem-final">
-            Mas a verdade é que, acertando tudo ou não, você já ganhou meu coração por completo. Eu te amo! ❤️
+           Bom amor fiquei com preguiça de codar um verificador de respostas para ter uma resposta diferente para cada 
+           pergunta que vc acertar kkkk, então eu espero no minimo um {perguntasDoQuiz.length + `/` + perguntasDoQuiz.length}. Eu te amo! ❤️
           </p>
+          <div className="resultado-actions">
+            <button onClick={handleRefazerQuiz} className="resultado-button">
+              Refazer Quiz
+            </button>
+            <Link to="/" className="resultado-button">
+              Voltar para Home
+            </Link>
+          </div>
         </div>
       ) : (
         <>
