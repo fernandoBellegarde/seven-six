@@ -4,7 +4,7 @@ import taylorSwiftFoto from '../../assets/imgs/imgsCapaAlbum/taylorCapa.webp';
 import taylorLover from '../../assets/imgs/imgsCapaAlbum/taylorswift.webp';
 import taylor from '../../assets/imgs/imgsCapaAlbum/taylor.webp';
 import miw from '../../assets/imgs/imgsCapaAlbum/miw.jpg';
-import cyberhex from '../../assets/imgs/imgsCapaAlbum/cyberhex.webp';
+import cyberhex from '../../assets/imgs/imgsCapaAlbum/Cyberhex.webp';
 
 // --- SUA ESTRUTURA DE DADOS ---
 // Adicione o campo 'frase' em cada música
