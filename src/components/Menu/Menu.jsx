@@ -23,6 +23,8 @@ function Menu() {
           className={`menu-hamburger ${menuAberto ? 'aberto' : ''}`}
           onClick={() => setMenuAberto(!menuAberto)}
           aria-label="Abrir ou fechar menu"
+          // Adicionado para melhor acessibilidade
+          aria-expanded={menuAberto}
         >
           <span></span>
           <span></span>
@@ -31,14 +33,17 @@ function Menu() {
 
         {/* Adicionamos a classe 'aberto' quando o estado for true */}
         <div className={`menu-links ${menuAberto ? 'aberto' : ''}`}>
-          <NavLink to="/" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'} onClick={fecharMenu}>
+          <NavLink to="/" className="menu-link" onClick={fecharMenu}>
             Início
           </NavLink>
-          <NavLink to="/galeria" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'} onClick={fecharMenu}>
+          <NavLink to="/galeria" className="menu-link" onClick={fecharMenu}>
             Nossas Fotos
           </NavLink>
-          <NavLink to="/quiz" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'} onClick={fecharMenu}>
+          <NavLink to="/quiz" className="menu-link" onClick={fecharMenu}>
             Nosso Quiz
+          </NavLink>
+          <NavLink to="/musicas" className="menu-link" onClick={fecharMenu}>
+            Nossas Músicas
           </NavLink>
         </div>
       </div>
@@ -47,4 +52,3 @@ function Menu() {
 }
 
 export default Menu;
-
