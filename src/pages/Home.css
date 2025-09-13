@@ -56,6 +56,84 @@
   box-shadow: 0 6px 20px rgba(47, 79, 79, 0.3);
 }
 
+.date-picker-container {
+  margin-bottom: 2.5rem; /* Aumenta o espaço abaixo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Texto "Data para o nosso próximo abraço:" */
+.date-picker-label {
+  color: #2F4F4F; /* Azul Marinho */
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* O campo de input da data */
+.date-picker-input {
+  font-family: 'Poppins', sans-serif;
+  padding: 0.6rem 0.8rem;
+  border: 2px solid #C8D9E6; /* Azul Céu */
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #2F4F4F; /* Azul Marinho */
+  cursor: pointer;
+  background-color: #F5EFEB; /* Bege claro de fundo */
+  transition: all 0.3s ease;
+}
+
+.date-picker-input:focus {
+  outline: none;
+  border-color: #2F4F4F; /* Borda fica Azul Marinho ao focar */
+  box-shadow: 0 0 0 3px rgba(47, 79, 79, 0.1);
+}
+
+/* Container da contagem regressiva */
+.countdown-container {
+  background-color: #F5EFEB; /* Bege */
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin: 0 auto 2.5rem auto;
+  border: 1px solid #e0d9dc; /* Borda sutil */
+}
+
+/* O timer com os números */
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Cada item individual (dias, horas, etc.) */
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  color: #2F4F4F; /* Azul Marinho */
+  font-size: 0.75rem; /* Texto menor (dias, horas) */
+  text-transform: uppercase;
+  min-width: 60px; /* Garante alinhamento */
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Os números grandes */
+.countdown-item span {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Mensagem que aparece quando o tempo acaba */
+.countdown-finalizado {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2F4F4F; /* Azul Marinho */
+}
+
 /* ========================================= */
 /* ESTILOS PARA TELAS MAIORES (TABLET/DESKTOP) */
 /* ========================================= */
@@ -87,6 +165,12 @@
     /* Botão volta a ter largura automática */
     width: auto;
     padding: 1rem 2rem;
+  }
+  .countdown-timer {
+    gap: 1.5rem;
+  }
+  .countdown-item {
+    min-width: 70px;
   }
 }
 
