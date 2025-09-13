@@ -3,17 +3,16 @@
   justify-content: center;
   align-items: center;
   /* Menos padding em telas pequenas para não espremer o conteúdo */
-  padding: 1.5rem 1rem;
+  padding: 1.5rem .235rem;
 }
 
 .home-card {
   background: white;
-  padding: 2rem; /* Padding inicial para mobile */
+  padding: 1rem; /* Padding inicial para mobile */
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 90%; /* Ocupa 90% da tela no celular */
-  max-width: 600px;
+  width: 100%; /* Ocupa 100% da tela no celular */
 }
 
 .home-card h1 {
