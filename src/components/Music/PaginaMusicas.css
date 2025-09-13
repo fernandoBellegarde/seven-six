@@ -1,0 +1,154 @@
+.musicas-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.musicas-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.musicas-header h1 {
+  color: #2F4F4F; /* Azul Marinho */
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.musicas-header p {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.artistas-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Espaço entre artistas */
+}
+
+.artista-container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(47, 79, 79, 0.08);
+  transition: all 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .artista-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(47, 79, 79, 0.12);
+  }
+}
+
+.artista-card {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.artista-foto {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Foto do artista redonda */
+  margin-right: 1rem;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.artista-info {
+  flex-grow: 1;
+}
+
+.artista-info h3 {
+  color: #2F4F4F; /* Azul Marinho */
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.artista-chevron {
+  width: 12px;
+  height: 12px;
+  border-style: solid;
+  border-color: #2F4F4F;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg); /* Seta para baixo */
+  transition: transform 0.3s ease;
+  margin-left: 1rem;
+}
+
+.artista-chevron.aberto {
+  transform: rotate(-135deg); /* Seta para cima */
+}
+
+/* --- ANIMAÇÃO OTIMIZADA PARA PERFORMANCE --- */
+.musicas-lista {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s ease-in-out;
+}
+
+.musicas-lista.aberto {
+  grid-template-rows: 1fr;
+}
+
+.musicas-lista-inner {
+  overflow: hidden;
+  padding: 0 1rem;
+}
+
+
+.musica-card {
+  display: flex;
+  align-items: flex-start; /* Alinha no topo para a frase ficar bem posicionada */
+  padding: 1rem 0;
+  border-top: 1px solid #F5EFEB; /* Linha separadora suave */
+}
+
+.musica-capa {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  margin-right: 1rem;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.musica-info {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.musica-titulo {
+  color: #2F4F4F;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0; /* Espaço abaixo do título */
+}
+
+/* --- ESTILOS PARA A FRASE DA MÚSICA --- */
+.musica-frase-container {
+  background-color: #F5EFEB; /* Fundo Bege suave */
+  border-left: 3px solid #F7C9D4; /* Borda Azaleia */
+  padding: 0.75rem;
+  border-radius: 4px;
+}
+
+.musica-frase {
+  color: #555;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Ajustes para ecrãs maiores */
+@media (min-width: 768px) {
+  .musicas-header h1 {
+    font-size: 2.8rem;
+  }
+}
